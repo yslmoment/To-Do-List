@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/eyunxeok/Library/Mobile Documents/com~apple~CloudDocs/동국대학교/해커톤/example",
+      "program": "/Users/eyunxeok/Library/Mobile Documents/com~apple~CloudDocs/동국대학교/해커톤/example/build/Debug/outDebug"
+    }
+  ]
+}
