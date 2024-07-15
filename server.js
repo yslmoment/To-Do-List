@@ -1,15 +1,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const mysql = require('mysql2'); // mysql2 사용
+const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
+const dotenv = require('dotenv'); // dotenv 패키지 로드
+
+dotenv.config(); // 환경 변수 로드
+
 const app = express();
 const port = 3000;
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '2020112131', // 비밀번호
-    database: 'testdb'
+    host: process.env.DB_HOST,      // 환경 변수로부터 값 로드
+    user: process.env.DB_USER,      // 환경 변수로부터 값 로드
+    password: process.env.DB_PASSWORD, // 환경 변수로부터 값 로드
+    database: process.env.DB_NAME   // 환경 변수로부터 값 로드
 });
 
 db.connect(err => {
