@@ -9,6 +9,7 @@ const port = 3000;
 const sequelize = new Sequelize("todoapp", "root", "1234", {
   host: "localhost",
   dialect: "mysql",
+  logging: console.log, // SQL 쿼리를 콘솔에 로그로 남김
 });
 
 // 모델 정의
@@ -44,7 +45,14 @@ const Task = sequelize.define("Task", {
 });
 
 // 데이터베이스 동기화
-sequelize.sync();
+sequelize
+  .sync()
+  .then(() => {
+    console.log("Database synced");
+  })
+  .catch((err) => {
+    console.error("Failed to sync database:", err);
+  });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -60,6 +68,7 @@ app.post("/signup", async (req, res) => {
     res.send("Signup successful");
   } catch (error) {
     res.status(400).send("Signup failed");
+    console.error(error); // 오류 메시지를 콘솔에 출력
   }
 });
 
