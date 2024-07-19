@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Nanum+Gothic&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things To Do</title>
+    <link rel="stylesheet" href="main_styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Things To Do</h1>
+        <ul id="todo-list">
+            <li data-memo="Go for a 5km run."><button class="circle-button"></button> <span class="task">Morning run</span></li>
+            <li data-memo="Project meeting at 10 AM."><button class="circle-button"></button> <span class="task">Meeting</span></li>
+            <li data-memo="Lunch with Alice at the new cafe."><button class="circle-button"></button> <span class="task">Lunch with Alice</span></li>
+        </ul>
+        <button id="add-button">Add New Task</button>
+    </div>
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <input type="text" id="title-input" placeholder="Title">
+            <textarea id="memo-input" placeholder="Memo"></textarea>
+            <button id="save-button">Add</button>
+        </div>
+    </div>
+    
+    <div id="memo-popup" class="memo-popup">
+        <div class="memo-popup-content">
+            <p id="memo-text"></p>
+            <button id="close-memo-button">Close</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
